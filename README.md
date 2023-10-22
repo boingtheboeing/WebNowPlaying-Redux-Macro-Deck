@@ -42,6 +42,7 @@ https://jbcarreon123.github.io/docs/md2/wnpl
 | wnp_repeatone | Shows when the repeat is on single track mode | Boolean |
 | wnp_shuffle | Shows when the shuffle is turned on or off | Boolean |
 | wnp_position_percent | Shows the position percentage | Float |
+| wnp_rating | Shows the current rating (like or dislike) | Integer |
 
 ### This is a plugin for [Macro Deck 2](https://github.com/SuchByte/Macro-Deck), it does NOT function as a standalone app
 <img height="64px" src="https://macrodeck.org/images/macro_deck_2_official_plugin.png" />

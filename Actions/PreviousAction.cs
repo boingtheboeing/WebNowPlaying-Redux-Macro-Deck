@@ -9,10 +9,10 @@ using System.Diagnostics;
 using System.Text;
 using SuchByte.MacroDeck.Logging;
 using SuchByte.MacroDeck;
-using jbcarreon123.WebNowPlayingPlugin;
+using boingtheboeing.WebNowPlayingPlugin;
 using WNPReduxAdapterLibrary;
 
-namespace jbcarreon123.WebNowPlayingPlugin.Actions
+namespace boingtheboeing.WebNowPlayingPlugin.Actions
 {
     public class PreviousAction : PluginAction
     {
@@ -26,7 +26,7 @@ namespace jbcarreon123.WebNowPlayingPlugin.Actions
         {
             if (WNPRedux.MediaInfo.Controls.SupportsSkipPrevious)
             {
-                WNPRedux.MediaInfo.Controls.TrySkipPrevious();   
+                WNPRedux.MediaInfo.Controls.TrySkipPrevious();
             }
         }
     }

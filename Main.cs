@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 using System.Threading;
-using jbcarreon123.WebNowPlayingPlugin.Actions;
+using boingtheboeing.WebNowPlayingPlugin.Actions;
 using Windows.Media.Control;
 using SuchByte.MacroDeck;
 using SuchByte.MacroDeck.Logging;
@@ -11,7 +11,7 @@ using SuchByte.MacroDeck.Plugins;
 using SuchByte.MacroDeck.Variables;
 using WNPReduxAdapterLibrary;
 
-namespace jbcarreon123.WebNowPlayingPlugin
+namespace boingtheboeing.WebNowPlayingPlugin
 {
     public static class PluginInstance
     {
@@ -43,7 +43,8 @@ namespace jbcarreon123.WebNowPlayingPlugin
                     new PreviousAction(),
                     new NextAction(),
                     new ShuffleAction(),
-                    new RepeatAction()
+                    new RepeatAction(),
+                    new RateAction()
                 };
                 Init();
                 _statusIcon = new StatusIcon();
@@ -82,40 +83,111 @@ namespace jbcarreon123.WebNowPlayingPlugin
 
                     var mediainfo = WNPRedux.MediaInfo;
 
-                    VariableManager.SetValue("wnp_title", mediainfo.Title, VariableType.String, PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_album", mediainfo.Album, VariableType.String, PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_artist", mediainfo.Artist, VariableType.String, PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_position", mediainfo.Position, VariableType.String,
+                    VariableManager.SetValue(
+                        "wnp_title",
+                        mediainfo.Title,
+                        VariableType.String,
                         PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_pos_percent", mediainfo.PositionPercent, VariableType.Float,
-                        PluginInstance.Main, null);
-                    VariableManager.SetValue("wnp_duration", mediainfo.Duration, VariableType.String,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_album",
+                        mediainfo.Album,
+                        VariableType.String,
                         PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_player", mediainfo.PlayerName, VariableType.String,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_artist",
+                        mediainfo.Artist,
+                        VariableType.String,
                         PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_state", mediainfo.State, VariableType.Integer, PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_volume", mediainfo.Volume, VariableType.Integer, PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_shuffle", mediainfo.ShuffleActive, VariableType.Bool,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_position",
+                        mediainfo.Position,
+                        VariableType.String,
                         PluginInstance.Main,
-                        null);
-                    VariableManager.SetValue("wnp_repeatone", mediainfo.RepeatMode == MediaInfo.RepeatModeEnum.ONE,
-                        VariableType.Bool, PluginInstance.Main, null);
-                    VariableManager.SetValue("wnp_repeatall", mediainfo.RepeatMode == MediaInfo.RepeatModeEnum.ALL,
-                        VariableType.Bool, PluginInstance.Main, null);
-                    VariableManager.SetValue("wnp_is_playing", mediainfo.State == MediaInfo.StateMode.PLAYING,
-                        VariableType.Bool, PluginInstance.Main, null);
-                    VariableManager.SetValue("wnp_repeat",
-                        mediainfo.RepeatMode != MediaInfo.RepeatModeEnum.NONE, VariableType.Bool, PluginInstance.Main,
-                        null);
-
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_pos_percent",
+                        mediainfo.PositionPercent,
+                        VariableType.Float,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_duration",
+                        mediainfo.Duration,
+                        VariableType.String,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_player",
+                        mediainfo.PlayerName,
+                        VariableType.String,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_state",
+                        mediainfo.State,
+                        VariableType.Integer,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_volume",
+                        mediainfo.Volume,
+                        VariableType.Integer,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_shuffle",
+                        mediainfo.ShuffleActive,
+                        VariableType.Bool,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_repeatone",
+                        mediainfo.RepeatMode == MediaInfo.RepeatModeEnum.ONE,
+                        VariableType.Bool,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_repeatall",
+                        mediainfo.RepeatMode == MediaInfo.RepeatModeEnum.ALL,
+                        VariableType.Bool,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_is_playing",
+                        mediainfo.State == MediaInfo.StateMode.PLAYING,
+                        VariableType.Bool,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_repeat",
+                        mediainfo.RepeatMode != MediaInfo.RepeatModeEnum.NONE,
+                        VariableType.Bool,
+                        PluginInstance.Main,
+                        null
+                    );
+                    VariableManager.SetValue(
+                        "wnp_rating",
+                        mediainfo.Rating,
+                        VariableType.Float,
+                        PluginInstance.Main,
+                        null
+                    );
                     Thread.Sleep(300);
                 }
                 catch (Exception ex)

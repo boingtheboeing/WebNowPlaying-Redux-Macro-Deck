@@ -4,17 +4,17 @@
     <TargetFramework>net7.0-windows10.0.22000.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <AssemblyName>WebNowPlaying Plugin</AssemblyName>
-    <RootNamespace>jbcarreon123.WebNowPlayingPlugin</RootNamespace>
+    <RootNamespace>boingtheboeing.WebNowPlayingPlugin</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <Platforms>AnyCPU;x86</Platforms>
     <Version>3.2.0</Version>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <Authors>jbcarreon123</Authors>
+    <Authors>boingtheboeing</Authors>
     <Company />
     <Description>Interface WebNowPlaying to Macro Deck 2!</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/jbcarreon123/WebNowPlaying-Redux-Macro-Deck</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/jbcarreon123/WebNowPlaying-Redux-Macro-Deck</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/boingtheboeing/WebNowPlaying-Redux-Macro-Deck</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/boingtheboeing/WebNowPlaying-Redux-Macro-Deck</RepositoryUrl>
     <LangVersion>latestmajor</LangVersion>
   </PropertyGroup>
 

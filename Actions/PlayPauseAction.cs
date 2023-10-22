@@ -9,16 +9,17 @@ using System.Diagnostics;
 using System.Text;
 using SuchByte.MacroDeck.Logging;
 using SuchByte.MacroDeck;
-using jbcarreon123.WebNowPlayingPlugin;
+using boingtheboeing.WebNowPlayingPlugin;
 using WNPReduxAdapterLibrary;
 
-namespace jbcarreon123.WebNowPlayingPlugin.Actions
+namespace boingtheboeing.WebNowPlayingPlugin.Actions
 {
     public class PlayPauseAction : PluginAction
     {
         public override string Name => "Play/Pause";
 
-        public override string Description => "Plays or pauses the current track for all supported tabs";
+        public override string Description =>
+            "Plays or pauses the current track for all supported tabs";
 
         public override bool CanConfigure => false;
 
@@ -28,7 +29,7 @@ namespace jbcarreon123.WebNowPlayingPlugin.Actions
         {
             if (WNPRedux.MediaInfo.Controls.SupportsPlayPause)
             {
-                WNPRedux.MediaInfo.Controls.TryTogglePlayPause();   
+                WNPRedux.MediaInfo.Controls.TryTogglePlayPause();
             }
         }
     }

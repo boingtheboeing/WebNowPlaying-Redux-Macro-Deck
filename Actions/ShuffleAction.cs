@@ -2,7 +2,7 @@ using SuchByte.MacroDeck.ActionButton;
 using SuchByte.MacroDeck.Plugins;
 using WNPReduxAdapterLibrary;
 
-namespace jbcarreon123.WebNowPlayingPlugin.Actions
+namespace boingtheboeing.WebNowPlayingPlugin.Actions
 {
     public class ShuffleAction : PluginAction
     {
@@ -18,7 +18,7 @@ namespace jbcarreon123.WebNowPlayingPlugin.Actions
         {
             if (WNPRedux.MediaInfo.Controls.SupportsToggleShuffleActive)
             {
-                WNPRedux.MediaInfo.Controls.TryToggleShuffleActive();   
+                WNPRedux.MediaInfo.Controls.TryToggleShuffleActive();
             }
         }
     }
