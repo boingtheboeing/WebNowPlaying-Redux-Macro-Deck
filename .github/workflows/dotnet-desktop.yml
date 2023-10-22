@@ -39,7 +39,7 @@ jobs:
         if: ${{ steps.already-published.outputs.is_it == 'false' }}
         uses: Macro-Deck-App/Actions/build-extension@main
         with:
-          extension-path: .
+          extension-path: ./
           artifact-name: WNP_PLUGIN_${{ github.event.pull_request.number }}
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.2
